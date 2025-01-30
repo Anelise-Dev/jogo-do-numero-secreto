@@ -11,11 +11,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-
 body::before {
-    background-image: url("img/code.png");
+    background-image: url("./img/code.png");
     background-repeat: no-repeat;
     background-position: right;
     content: "";
@@ -24,6 +24,7 @@ body::before {
     width: 100%;
     height: 100%;
     opacity: 0.4;
+    z-index: -1;
 }
 
 .container {
@@ -35,11 +36,10 @@ body::before {
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-image: url("img/Ruido.png");
+    background-image: url("./img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
 }
-
 
 .container__conteudo {
     display: flex;
@@ -62,6 +62,12 @@ body::before {
     font-weight: 700;
     border: none;
     margin-top: 2rem;
+    cursor: pointer;
+}
+
+.container__botao:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }
 
 .container__texto {
@@ -106,12 +112,7 @@ button {
     font-weight: 400;
 }
 
-button:disabled {
-    background-color: gray;
-}
-
 @media screen and (max-width: 1250px) {
-
     h1 {
         font-size: 50px;
     }
@@ -119,7 +120,6 @@ button:disabled {
     .container__botao {
         font-size: 16px;
     }
-
 
     .texto__paragrafo {
         font-size: 24px;
@@ -135,6 +135,6 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
     }
 }
